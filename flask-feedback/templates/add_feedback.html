@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Add Feedback
+{% endblock %}
+
+{% block content %}
+    <h1>Add Feedback</h1>
+    <form method="POST">
+        {{ form.csrf_token }}
+        <div>
+            {{ form.title.label }} {{ form.title(size=50) }}
+        </div>
+        <div>
+            {{ form.content.label }} {{ form.content(cols=50, rows=10) }}
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+{% endblock %}
